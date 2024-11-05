@@ -1,5 +1,14 @@
-# Merian Example: Compute Sum
+# Merian Util: Print Coop Props
 
-This is a minimal example demonstrating how to compute a sum of an array on the GPU using Merian.
+This is a minimal printing the cooperative matrix properties using [Merian](https://github.com/LDAP/merian).
+
+### Compile and run
+
+```bash
+meson setup build
+meson compile -C build
+
+./build/merian-print-coop-props
+```
 
 
