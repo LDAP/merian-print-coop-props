@@ -13,6 +13,12 @@ int main() {
         SPDLOG_ERROR("{} not supported", VK_KHR_COOPERATIVE_MATRIX_EXTENSION_NAME);
     }
 
+    vk::PhysicalDeviceDriverProperties driver_props = context->get_physical_device()->get_properties();
+    vk::PhysicalDeviceProperties device_props = context->get_physical_device()->get_properties();
+    fmt::println("Device: {}, supporting {}", device_props.deviceName.data(), merian::format_vk_api_version(device_props.apiVersion)),
+    fmt::println("Driver: {} ({})", driver_props.driverName.data(), driver_props.driverInfo.data()),
+    fmt::println(""),
+
     fmt::println("Supported shapes for Result = A * B + C with");
     fmt::println("- M is the number of rows in matrices A, C, and Result");
     fmt::println("- K is the number of columns in matrix A and rows in matrix B");
